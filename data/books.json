@@ -1,1 +1,51 @@
-[]
+[
+{
+"id": 1,
+"title": "El Principito",
+"authorId": 1,
+"publisherId": 1,
+"year": 1943
+},
+{
+"id": 2,
+"title": "Harry Potter y la piedra filosofal",
+"authorId": 2,
+"publisherId": 2,
+"year": 1997
+},
+{
+"id": 3,
+"title": "Harry Potter y la cámara secreta",
+"authorId": 2,
+"publisherId": 2,
+"year": 1998
+},
+{
+"id": 4,
+"title": "Hábitos Atómicos",
+"authorId": 3,
+"publisherId": 3,
+"year": 2018
+},
+{
+"id": 5,
+"title": "El Eternauta",
+"authorId": 4,
+"publisherId": 4,
+"year": 1957
+},
+{
+"id": 6,
+"title": "Cien años de soledad",
+"authorId": 5,
+"publisherId": 5,
+"year": 1967
+},
+{
+"id": 7,
+"title": "Don Quijote de la Mancha",
+"authorId": 6,
+"publisherId": 6,
+"year": 1605
+}
+]

@@ -1,0 +1,32 @@
+[
+{
+"id": 1,
+"name": "Antoine de Saint-Exupéry",
+"country": "Francia"
+},
+{
+"id": 2,
+"name": "J.K. Rowling",
+"country": "Reino Unido"
+},
+{
+"id": 3,
+"name": "James Clear",
+"country": "Estados Unidos"
+},
+{
+"id": 4,
+"name": "Héctor Germán Oesterheld",
+"country": "Argentina"
+},
+{
+"id": 5,
+"name": "Gabriel García Márquez",
+"country": "Colombia"
+},
+{
+"id": 6,
+"name": "Miguel de Cervantes Saavedra",
+"country": "España"
+}
+]
