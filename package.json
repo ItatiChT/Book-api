@@ -4,12 +4,12 @@
   "description": "Trabajo final integrador - book api con node.js",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "npm start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "uuid": "^13.0.0"
   }
