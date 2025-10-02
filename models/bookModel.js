@@ -1,10 +1,35 @@
 
-const fs = require('fs');
+//Importamos los módulos necesarios
+/*const fs = require('fs');
 const path = require('path');
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require('uuid');*/
 
-const dataPath = path.join(__dirname, '../data/books.json');
+import fs from 'fs';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const filePath = path.join(__dirname, '../data/books.json');
+
+const bookModel = {
+  //Leemos el archivo JSON y obtenemos los libros
+  readBooks: () => {
+    const data = fs.readFileSync(filePath);
+    return JSON.parse(data)
+  },
+  
+  //Escribir el archivo JSON con nueva data
+  writeBooks: (books) => {
+    const jsonData = JSON.stringify(books, null, 2);
+    fs.writeFileSync(filePath, jsonData);
+  }
+};
+
+export { bookModel };
+
+/*
 function loadBooks() {
   if (!fs.existsSync(dataPath)) {
     fs.writeFileSync(dataPath, JSON.stringify([]));
@@ -49,4 +74,4 @@ function remove(id) {
   return true;
 }
 
-module.exports = { getAll, getById, create, update, remove };
+module.exports = { getAll, getById, create, update, remove };*/

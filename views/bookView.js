@@ -1,4 +1,14 @@
+const responseView ={
+    formatResponse: (data) => {
+        return JSON.stringify(data, null, 2);
+    }
+}
 
+export { responseView };
+
+
+
+/*
 function renderList(books) {
   return { status: 'ok', count: books.length, books };
 }
