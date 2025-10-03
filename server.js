@@ -43,3 +43,53 @@ const server = net.createServer((socket) => {
 server.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
 });
+
+
+// agrego el codigo 
+
+import net from 'net';
+import { bookController } from './controllers/bookController.js';
+import { v4 as uuidv4 } from 'uuid';
+
+function isJSON(str) {
+  return str.startsWith('{') && str.endsWith('}');
+}
+
+const server = net.createServer((socket) => {
+  console.log('Cliente conectado!');
+
+  socket.on('data', (data) => {
+    const command = data.toString().trim();
+
+    if (command === 'LIST BOOKS') {
+      const response = bookController.listBooks();
+      socket.write(response);
+
+    } else if (command.startsWith('ADD BOOK ')) {
+      const bookDataString = command.replace('ADD BOOK ', '').trim();
+
+      if (isJSON(bookDataString)) {
+        const bookData = JSON.parse(bookDataString);
+
+        if (bookData && typeof bookData === 'object') {
+          const newBook = { id: uuidv4(), ...bookData };
+          const response = bookController.createBook(newBook);
+          socket.write(response);
+        } else {
+          socket.write('Datos de libro inválidos.');
+        }
+      } else {
+        socket.write('Error: formato JSON no válido.');
+      }
+
+    } else {
+      socket.write('Comando no reconocido.');
+    }
+  });
+
+  socket.on('end', () => console.log('Cliente se ha desconectado'));
+});
+
+server.listen(4000, () => {
+  console.log('Servidor escuchando en el puerto 4000');
+});
