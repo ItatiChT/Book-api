@@ -1,4 +1,4 @@
-# 📌 Trabajo Práctico Integrador – Clase 18
+# 📌 Trabajo Práctico Integrador – Modulo 2
 
 ## 📖 Descripción
 Este proyecto corresponde al **Trabajo Práctico Integrador** de la cursada.  
@@ -19,17 +19,14 @@ El objetivo es aplicar los conceptos aprendidos durante las clases, implementand
 ## 📂 Instalación
 1. Clonar el repositorio desde GitHub:
    
-   git clone <url-del-repositorio>
-   cd <carpeta-del-proyecto>
+   git clone https://github.com/ItatiChT/Book-api.git
 
 
 2. Instalar dependencias necesarias:
 
    npm install uddi
-  
-## ▶️ Uso
 
-Se ejecuta con el siguiente comando:
+3. Ejecutar con el siguiente comando:
 
     npm start
 
