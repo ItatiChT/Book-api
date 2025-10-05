@@ -16,7 +16,7 @@ const authorController = {
         authorModel.writeAuthors(); // Llamamos la función writeAuthors del modelo para reescribirlo
         return responseView.formatResponse({message: 'Autor agregado con éxito.'})
     },
-
+/*
     //Eliminar libro por ID
     deleteAuthor: (id) => {
         let authors = authorModel.readAuthors();
@@ -27,6 +27,6 @@ const authorController = {
         authorModel.writeAuthors(newAuthors);
         return responseView.formatResponse({ message: 'Autor eliminado con éxito.' });
     }
-}
+*/}
 
 export { authorController }
