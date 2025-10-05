@@ -21,7 +21,7 @@ const bookController = {
     bookModel.writeBooks(books);          // Escribo el array completo actualizado
     return responseView.formatResponse({ message: 'Libro agregado con éxito.' });
 },
-
+/*
     //Buscar libro por ID
     getBookById: (id) => {
         const books = bookModel.readBooks();
@@ -54,7 +54,7 @@ const bookController = {
         bookModel.writeBooks(newBooks);
         return responseView.formatResponse({ message: 'Libro eliminado con éxito.' });
     }
-};
+*/};
 
 export { bookController }
 
