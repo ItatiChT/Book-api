@@ -1,5 +1,99 @@
+import net from 'net';
+import { bookController } from './controllers/bookController.js';
+import { publisherController } from './controllers/publisherController.js'
+import { authorController } from './controllers/authorController.js';
+import { v4 as uuidv4 } from 'uuid';
 
-const net = require('net');
+function isJSON(str) {
+  return str.startsWith('{') && str.endsWith('}');
+}
+
+const server = net.createServer((socket) => {
+  console.log('Cliente conectado!');
+
+  socket.on('data', (data) => {
+    const command = data.toString().trim();
+
+    if (command === 'GET BOOKS') {
+      const response = bookController.getBooks();
+      socket.write(response);
+
+    } else if (command.startsWith('ADD BOOK')) {
+      const bookDataString = command.replace('ADD BOOK', '').trim();
+
+      if (isJSON(bookDataString)) {
+        const bookData = JSON.parse(bookDataString);
+
+        if (bookData && typeof bookData === 'object') {
+          const newBook = { id: uuidv4(), ...bookData };
+          const response = bookController.addBook(newBook);
+          socket.write(response);
+        } else {
+          socket.write('Datos de libro inválidos.');
+        }
+      } else {
+        socket.write('Error: formato JSON no válido.');
+      }
+
+    } else if (command === 'GET AUTHORS') {
+      const response = authorController.getAuthors
+      socket.write(response);
+
+    } else if (command.startsWith('ADD AUTHOR')) {
+      const authorDataString = command.replace('ADD AUTHOR', '').trim();
+
+      if (isJSON(authorDataString)) {
+        const authorData = JSON.parse(authorDataString);
+
+        if (authorData && typeof authorData === 'object') {
+          const newAuthor = { id: uuidv4(), ...authorData };
+          const response = authorController.addAuthors(newAuthor)
+          socket.write(response);
+        } else {
+          socket.write('Datos del autor inválidos.');
+        }
+      } else {
+        socket.write('Error: formato JSON no válido.');
+      }
+      } else if (command === 'GET PUBLISHERS') {
+      const response = publisherController.getPublishers()
+      socket.write(response);
+
+    } else if (command.startsWith('ADD PUBLISHER')) {
+      const publisherDataString = command.replace('ADD PUBLISHER', '').trim();
+
+      if (isJSON(publisherDataString)) {
+        const publisherData = JSON.parse(publisherDataString);
+
+        if (publisherData && typeof publisherData === 'object') {
+          const newPublisher = { id: uuidv4(), ...publisherData };
+          const response = publisherController.addPublisher(newPublisher);
+          socket.write(response);
+        } else {
+          socket.write('Datos de la editorial inválidos.');
+        }
+      } else {
+        socket.write('Error: formato JSON no válido.');
+      } 
+    } else {
+      socket.write('Comando no reconocido.');
+    }
+  });
+
+  socket.on('end', () => console.log('Cliente se ha desconectado'));
+});
+
+server.listen(4000, () => {
+  console.log('Servidor escuchando en el puerto 4000');
+});
+
+
+
+
+
+
+
+/*const net = require('net');
 const bookController = require('./controllers/bookController');
 
 const PORT = 4000;
@@ -43,53 +137,6 @@ const server = net.createServer((socket) => {
 server.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
 });
-
+*/
 
 // agrego el codigo 
-
-import net from 'net';
-import { bookController } from './controllers/bookController.js';
-import { v4 as uuidv4 } from 'uuid';
-
-function isJSON(str) {
-  return str.startsWith('{') && str.endsWith('}');
-}
-
-const server = net.createServer((socket) => {
-  console.log('Cliente conectado!');
-
-  socket.on('data', (data) => {
-    const command = data.toString().trim();
-
-    if (command === 'LIST BOOKS') {
-      const response = bookController.listBooks();
-      socket.write(response);
-
-    } else if (command.startsWith('ADD BOOK ')) {
-      const bookDataString = command.replace('ADD BOOK ', '').trim();
-
-      if (isJSON(bookDataString)) {
-        const bookData = JSON.parse(bookDataString);
-
-        if (bookData && typeof bookData === 'object') {
-          const newBook = { id: uuidv4(), ...bookData };
-          const response = bookController.createBook(newBook);
-          socket.write(response);
-        } else {
-          socket.write('Datos de libro inválidos.');
-        }
-      } else {
-        socket.write('Error: formato JSON no válido.');
-      }
-
-    } else {
-      socket.write('Comando no reconocido.');
-    }
-  });
-
-  socket.on('end', () => console.log('Cliente se ha desconectado'));
-});
-
-server.listen(4000, () => {
-  console.log('Servidor escuchando en el puerto 4000');
-});
