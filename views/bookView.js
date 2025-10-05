@@ -25,3 +25,4 @@ function renderMessage(msg) {
 }
 
 module.exports = { renderList, renderDetail, renderMessage };
+*/
