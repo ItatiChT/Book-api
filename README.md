@@ -30,6 +30,7 @@ El objetivo es aplicar los conceptos aprendidos durante las clases, implementand
 
     npm start
 
+4. Las funcionalidades son las siguientes: 
 
 ## 👥 Autores
 

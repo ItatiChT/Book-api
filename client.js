@@ -12,7 +12,7 @@ const client = new net.Socket();
 
 //Establecemos la conexión con el servidor
 client.connect(4000, 'localHost', () => {
-    console.log('Conectados al servidor TCP.').
+    console.log('Conectados al servidor TCP.')
     rl.question('Escribe un comando. \n GET BOOKS\n ADD BOOK {}\n GET AUTHORS\n ADD AUTHOR {}\n GET PUBLISHERS\n ADD PUBLISHER {}', (command) =>{
         client.write(command); //Le enviamos el comando al servidor
     });
@@ -52,4 +52,4 @@ const client = net.createConnection({ port: 8080 }, () => {
 });
 client.on('end', () => console.log('Desconectado del servidor.'));
 client.on('error', (err) => console.log('Error:', err.message));
-
+*/
