@@ -17,7 +17,7 @@ const publisherController = {
         return responseView.formatResponse({ message: 'Editorial agregada con éxito.' });
     },
 
-    //Eliminar editorial por ID
+    /*//Eliminar editorial por ID
     deletePublisher: (id) => {
         let publishers = publisherModel.readPublishers();
         const newPublishers = publishers.filter(p => p.id !== id);
@@ -26,7 +26,7 @@ const publisherController = {
         }
         publisherModel.writePublishers(newPublishers);
         return responseView.formatResponse({ message: 'Editorial eliminada con éxito.' });
-    }
+    }*/
 }
 
 export { publisherController }
