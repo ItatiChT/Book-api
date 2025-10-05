@@ -31,6 +31,12 @@ El objetivo es aplicar los conceptos aprendidos durante las clases, implementand
     npm start
 
 4. Las funcionalidades son las siguientes: 
+      GET BOOKS
+      ADD BOOK {}
+      GET AUTHORS
+      ADD AUTHOR {}
+      GET PUBLISHERS
+      ADD PUBLISHER {}
 
 ## 👥 Autores
 
