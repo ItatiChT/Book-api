@@ -1,6 +1,6 @@
 //Importamos el modelo y la vista
-import { publisherModel } from '../models/publisherModel'
-import { responseView } from '../views/publisherView'
+import { publisherModel } from '../models/publisherModel.js'
+import { responseView } from '../views/publisherView.js'
 
 const publisherController = {
     //Obtener todos las editoriales

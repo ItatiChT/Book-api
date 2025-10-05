@@ -22,3 +22,5 @@ const publisherModel = {
 };
 
 export { publisherModel };
+
+

@@ -1,6 +1,6 @@
 //Importamos el modelo y la vista
-import { authorModel } from '../models/authorModel'
-import { responseView } from '../views/authorView'
+import { authorModel } from '../models/authorModel.js'
+import { responseView } from '../views/authorView.js'
 
 const authorController = {
     //Obtener todos los autores
