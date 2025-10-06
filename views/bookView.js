@@ -1,28 +1,13 @@
-const responseView ={
+const responseView = {
+    // Formatear cualquier dato como JSON legible para enviar al cliente
     formatResponse: (data) => {
-        return JSON.stringify(data, null, 2);
+        try {
+            return JSON.stringify(data, null, 2);
+        } catch (err) {
+            // Si ocurre un error al convertir a JSON, devolvemos un mensaje de error
+            return JSON.stringify({ error: 'Error al formatear la respuesta: ' + err.message }, null, 2);
+        }
     }
-}
+};
 
 export { responseView };
-
-
-
-/*
-function renderList(books) {
-  return { status: 'ok', count: books.length, books };
-}
-
-function renderDetail(book) {
-  if (!book) {
-    return { status: 'error', message: 'Libro no encontrado' };
-  }
-  return { status: 'ok', book };
-}
-
-function renderMessage(msg) {
-  return { status: 'ok', message: msg };
-}
-
-module.exports = { renderList, renderDetail, renderMessage };
-*/
