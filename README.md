@@ -33,7 +33,7 @@ El objetivo es aplicar los conceptos aprendidos durante las clases, implementand
 
 ## 💻 Ejemplos de uso
 
- comandos y repespuestas esperadas  
+ Comandos y repespuestas esperadas  
       GET BOOKS: Muestra la lista de libros.  
       ADD BOOK: Agrega un nuevo libro.  
       GET AUTHORS: Muestra la lista de autores.  
