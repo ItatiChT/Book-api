@@ -83,8 +83,8 @@ const server = net.createServer((socket) => {
   socket.on('end', () => console.log('Cliente se ha desconectado'));
 });
 
-server.listen(4000, () => {
-  console.log('Servidor escuchando en el puerto 4000');
+server.listen(8080, () => {
+  console.log('Servidor escuchando en el puerto 8080');
 });
 
 
