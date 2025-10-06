@@ -33,13 +33,13 @@ El objetivo es aplicar los conceptos aprendidos durante las clases, implementand
 
 ## 💻 Ejemplos de uso
 
- comandos y repespuestas esperadas 
-      GET BOOKS: Muestra la lista de libros.
-      ADD BOOK: Agrega un nuevo libro.
-      GET AUTHORS: Muestra la lista de autores.
-      ADD AUTHOR: Agrega un autor.
-      GET PUBLISHERS: Muestra la lista de editoriales.
-      ADD PUBLISHER: Agerga una nueva editorial.
+ comandos y repespuestas esperadas  
+      GET BOOKS: Muestra la lista de libros.  
+      ADD BOOK: Agrega un nuevo libro.  
+      GET AUTHORS: Muestra la lista de autores.  
+      ADD AUTHOR: Agrega un autor.  
+      GET PUBLISHERS: Muestra la lista de editoriales.  
+      ADD PUBLISHER: Agerga una nueva editorial.  
 
 ## 👥 Autores
 
