@@ -7,7 +7,7 @@ El objetivo es aplicar los conceptos aprendidos durante las clases, implementand
 ## 🚀 Funcionalidades principales
 - 📂 Manejo de archivos JSON para persistencia de datos.  
 - 🌐 Servidor TCP con generación de UUIDs.  
-- 📝 Gestión de tareas, proyectos y contactos.  
+- 📝 Gestión de tareas.  
 - 🔄 Práctica de estructuras de datos y algoritmos.  
 - 💻 Interacción con el usuario mediante consola. 
 
@@ -30,13 +30,16 @@ El objetivo es aplicar los conceptos aprendidos durante las clases, implementand
 
     npm start
 
-4. Las funcionalidades son las siguientes: 
-      GET BOOKS
-      ADD BOOK {}
-      GET AUTHORS
-      ADD AUTHOR {}
-      GET PUBLISHERS
-      ADD PUBLISHER {}
+
+## 💻 Ejemplos de uso
+
+ comandos y repespuestas esperadas 
+      GET BOOKS: Muestra la lista de libros.
+      ADD BOOK: Agrega un nuevo libro.
+      GET AUTHORS: Muestra la lista de autores.
+      ADD AUTHOR: Agrega un autor.
+      GET PUBLISHERS: Muestra la lista de editoriales.
+      ADD PUBLISHER: Agerga una nueva editorial.
 
 ## 👥 Autores
 
