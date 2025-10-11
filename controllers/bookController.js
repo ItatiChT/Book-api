@@ -19,7 +19,7 @@ const bookController = {
     },
   
     //Agregar libros
-    addBooks: (newBook) => {
+    addBook: (newBook) => {
     const books = bookModel.readBooks();  // Leo los libros existentes
     books.push(newBook);                  // Agrego el nuevo libro
     bookModel.writeBooks(books);          // Escribo el array completo actualizado
